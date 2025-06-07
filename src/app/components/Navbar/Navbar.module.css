@@ -1,0 +1,122 @@
+.header {
+    color: var(--default-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0 15px;
+    transition: all ease-in-out 0.3s;
+    overflow-y: auto;
+    z-index: 997;
+    min-width: 200px;
+    margin-top: 80px;
+}
+
+@media (max-width: 1199px) {
+  .header {
+    background-color: var(--background-color);
+    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    width: 300px;
+    left: -100%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .header ~ .main-content {
+    margin-left: 160px;
+  }
+
+  .header ~ .main-content .hero {
+    margin-left: -160px;
+    width: 100vw;
+  }
+}
+
+.headerShow {
+  left: 0;
+}
+
+.headerToggle {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
+
+.headerToggle:hover {
+  color: var(--contrast-color);
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+}
+
+.navmenu {
+  padding: 0;
+  z-index: 9997;
+}
+
+.navmenu ul {
+  list-style: none;
+  padding: 0 0 20px 0;
+  margin: 0;
+  width: 140px;
+}
+
+.navLink {
+  color: var(--nav-color);
+  font-family: var(--nav-font);
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  border-radius: 50px;
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  height: 56px;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.navLink i {
+  font-size: 20px;
+}
+
+.navLink span {
+  padding: 0 5px 0 7px;
+}
+
+@media (min-width: 992px) {
+  .navLink {
+    max-width: 56px;
+  }
+
+  .navLink span {
+    display: none;
+  }
+}
+
+.navLink:hover,
+.active {
+  color: var(--contrast-color);
+  background: var(--nav-hover-color);
+}
+
+.navLink:hover {
+  max-width: 100%;
+  color: var(--contrast-color);
+}
+
+.navLink:hover span {
+  display: block;
+}
