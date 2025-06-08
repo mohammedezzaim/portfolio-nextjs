@@ -87,3 +87,30 @@
     transform: translateX(20px);
   }
 }
+
+/* RTL Support */
+:global(.rtl-mode) .darkModeToggle {
+  right: auto;
+  left: 70px;
+}
+
+.rtl {
+  right: auto;
+  left: 70px;
+}
+
+@media (max-width: 768px) {
+  :global(.rtl-mode) .darkModeToggle,
+  .rtl {
+    right: auto;
+    left: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  :global(.rtl-mode) .darkModeToggle,
+  .rtl {
+    right: auto;
+    left: 55px;
+  }
+}

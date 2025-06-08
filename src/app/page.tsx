@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import { NextPage } from 'next';
 import Navbar from '@/app/components/Navbar/Navbar';
-import HeroSection from '@/app/components/HeroSection/HeroSection';
-import DarkModeToggle from '@/app/components/DarkMode/DarkModeToggle';
+import HomeSection from '@/app/components/Home/HomeSection';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AboutSection from '@/app/components/About/AboutSection';
+import LanguageToggle from '@/app/components/tradiction/toggle/LanguageToggle';
+import DarkModeToggle from '@/app/components/DarkMode/DarkModeToggle';
 
 const Home: NextPage = () => {
   return (
@@ -19,11 +20,11 @@ const Home: NextPage = () => {
       </Head>
 
       <div className="portfolio-app">
-        <DarkModeToggle />
         <Navbar />
-
+        <LanguageToggle />
+        <DarkModeToggle />
         <main className="main-content">
-          <HeroSection />
+          <HomeSection />
           <AboutSection />
         </main>
       </div>

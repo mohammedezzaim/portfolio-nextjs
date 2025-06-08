@@ -1,19 +1,22 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { useLanguage } from '@/app/components/tradiction/context/LanguageContext';
 import styles from './DarkModeToggle.module.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const DarkModeToggle = () => {
+  const { t, language } = useLanguage();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Vérifier le mode sauvegardé dans localStorage
+    // Check saved mode in localStorage or system preference
     const savedMode = localStorage.getItem('darkMode');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     const shouldBeDark = savedMode ? savedMode === 'true' : prefersDark;
     setIsDarkMode(shouldBeDark);
-    
-    // Appliquer le mode immédiatement
+
+    // Apply mode immediately
     if (shouldBeDark) {
       document.body.classList.add('dark-mode');
     }
@@ -22,11 +25,11 @@ const DarkModeToggle = () => {
   const toggleDarkMode = () => {
     const newMode = !isDarkMode;
     setIsDarkMode(newMode);
-    
-    // Sauvegarder dans localStorage
+
+    // Save to localStorage
     localStorage.setItem('darkMode', newMode.toString());
-    
-    // Appliquer/retirer la classe dark-mode
+
+    // Apply/remove dark-mode class
     if (newMode) {
       document.body.classList.add('dark-mode');
     } else {
@@ -36,10 +39,12 @@ const DarkModeToggle = () => {
 
   return (
     <button
-      className={`${styles.darkModeToggle} ${isDarkMode ? styles.dark : styles.light}`}
+      className={`${styles.darkModeToggle} ${isDarkMode ? styles.dark : styles.light} ${
+        language === 'ar' ? styles.rtl : ''
+      }`}
       onClick={toggleDarkMode}
-      aria-label={isDarkMode ? 'Activer le mode clair' : 'Activer le mode sombre'}
-      title={isDarkMode ? 'Mode clair' : 'Mode sombre'}
+      aria-label={t(isDarkMode ? 'common.lightMode' : 'common.darkMode')}
+      title={t(isDarkMode ? 'common.lightMode' : 'common.darkMode')}
     >
       <div className={styles.toggleTrack}>
         <div className={styles.toggleThumb}>

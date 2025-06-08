@@ -1,23 +1,27 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
-import styles from './HeroSection.module.css';
+import styles from './HomeSection.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { useLanguage } from '@/app/components/tradiction/context/LanguageContext';
 
-const HeroSection = () => {
+const HomeSection = () => {
   const typedRef = useRef<HTMLSpanElement>(null);
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     if (typedRef.current) {
+      const roles = [
+        t('hero.roles.java'),
+        t('hero.roles.spring'),
+        t('hero.roles.angular'),
+        t('hero.roles.ai'),
+        t('hero.roles.laravel')
+      ];
+
       const typed = new Typed(typedRef.current, {
-        strings: [
-          'Java Developer',
-          'Spring Developer',
-          'Angular Developer',
-          'IA Engineer',
-          'Laravel Programming'
-        ],
+        strings: roles,
         typeSpeed: 100,
         backSpeed: 50,
         loop: true,
@@ -29,7 +33,22 @@ const HeroSection = () => {
         typed.destroy();
       };
     }
-  }, []);
+  }, [t, language]);
+
+  const handleDownloadCV = () => {
+    const cvUrl = language === 'fr' 
+      ? '/files/cv/CV_Mohammed_Ezzaim_FR.pdf' 
+      : language === 'en'
+      ? '/files/cv/CV_Mohammed_Ezzaim_EN.pdf'
+      : '/files/cv/CV_Mohammed_Ezzaim_EN.pdf';
+    
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.download = `CV_Mohammed_Ezzaim_${language.toUpperCase()}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="hero" className={styles.hero}>
@@ -42,10 +61,21 @@ const HeroSection = () => {
       <div className={`container ${styles.heroContainer}`}>
         <div className="row justify-content-center">
           <div className="col-lg-9">
-            <h2 className={styles.heroTitle}>Mohammed Ezzaim</h2>
+            <h2 className={styles.heroTitle}>{t('hero.name')}</h2>
             <p className={styles.heroSubtitle}>
-              I'm <span ref={typedRef} className={styles.typed}></span>
+              {t('hero.subtitle')} <span ref={typedRef} className={styles.typed}></span>
             </p>
+            <div className={styles.buttonGroup}>
+              <a href="#contact" className={styles.heroButton}>
+                {t('nav.contact')}
+              </a>
+              <button 
+                onClick={handleDownloadCV} 
+                className={`${styles.heroButton} ${styles.heroButtonOutline}`}
+              >
+                {t('hero.downloadCV')}
+              </button>
+            </div>
             <div className={styles.socialLinks}>
               <a href="#" aria-label="Twitter">
                 <i className="bi bi-twitter-x"></i>
@@ -67,4 +97,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HomeSection;

@@ -51,6 +51,43 @@
   border-bottom: 2px solid var(--accent-color);
 }
 
+.buttonGroup {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.heroButton {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+}
+
+.heroButton:hover {
+  background-color: transparent;
+  color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.heroButtonOutline {
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.heroButtonOutline:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
 .socialLinks {
   margin-top: 25px;
 }
@@ -97,6 +134,13 @@
     font-size: 16px;
     margin-right: 12px;
   }
+  .buttonGroup {
+    justify-content: center;
+  }
+  .heroButton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
 
 /* Petits mobiles (moins de 480px) */
@@ -113,5 +157,15 @@
   }
   .hero {
     padding: 5px 10px;
+  }
+  .buttonGroup {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .heroButton {
+    width: 100%;
+    text-align: center;
+    padding: 8px 15px;
   }
 }

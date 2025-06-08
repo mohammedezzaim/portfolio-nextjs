@@ -1,15 +1,20 @@
 .header {
-    color: var(--default-color);
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    padding: 0 15px;
-    transition: all ease-in-out 0.3s;
-    overflow-y: auto;
-    z-index: 997;
-    min-width: 200px;
-    margin-top: 100px;
+  color: var(--default-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 15px;
+  transition: all ease-in-out 0.3s;
+  overflow-y: auto;
+  z-index: 997;
+  min-width: 200px;
+  margin-top: 100px;
+}
+
+.rtl {
+  left: auto;
+  right: 0;
 }
 
 @media (max-width: 1199px) {
@@ -18,6 +23,13 @@
     border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     width: 300px;
     left: -100%;
+  }
+
+  .rtl {
+    left: auto;
+    right: -100%;
+    border-right: none;
+    border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   }
 }
 
@@ -30,10 +42,26 @@
     margin-left: -160px;
     width: 100vw;
   }
+
+  .rtl ~ .main-content {
+    margin-left: 0;
+    margin-right: 160px;
+  }
+
+  .rtl ~ .main-content .hero {
+    margin-left: 0;
+    margin-right: -160px;
+    width: 100vw;
+  }
 }
 
 .headerShow {
   left: 0;
+}
+
+.rtl.headerShow {
+  left: auto;
+  right: 0;
 }
 
 .headerToggle {
@@ -52,6 +80,11 @@
   right: 15px;
   z-index: 9999;
   transition: background-color 0.3s;
+}
+
+:global(.rtl-mode) .headerToggle {
+  right: auto;
+  left: 15px;
 }
 
 .headerToggle:hover {
@@ -121,9 +154,7 @@
   display: block;
 }
 
-/* ===== RESPONSIVE AJOUTÉ ===== */
-
-/* Mobile : moins de 576px */
+/* Mobile: moins de 576px */
 @media (max-width: 575.98px) {
   .header {
     width: 100%;
@@ -138,8 +169,17 @@
     z-index: 9999;
   }
 
+  .rtl {
+    left: auto;
+    right: 0;
+  }
+
   .header ~ .main-content {
     margin-left: 0;
+  }
+
+  .rtl ~ .main-content {
+    margin-right: 0;
   }
 
   .navmenu ul {
@@ -163,9 +203,14 @@
     top: 10px;
     right: 10px;
   }
+
+  :global(.rtl-mode) .headerToggle {
+    right: auto;
+    left: 10px;
+  }
 }
 
-/* Tablette : entre 576px et 991px */
+/* Tablette: entre 576px et 991px */
 @media (min-width: 576px) and (max-width: 991.98px) {
   .header {
     width: 250px;
@@ -174,8 +219,18 @@
     position: fixed;
   }
 
+  .rtl {
+    left: auto;
+    right: 0;
+  }
+
   .header ~ .main-content {
     margin-left: 250px;
+  }
+
+  .rtl ~ .main-content {
+    margin-left: 0;
+    margin-right: 250px;
   }
 
   .navmenu ul {
@@ -201,15 +256,25 @@
   }
 }
 
-/* Écran large : plus de 1600px */
+/* Écran large: plus de 1600px */
 @media (min-width: 1601px) {
   .header {
     min-width: 220px;
     width: 220px;
   }
 
+  .rtl {
+    left: auto;
+    right: 0;
+  }
+
   .header ~ .main-content {
     margin-left: 220px;
+  }
+
+  .rtl ~ .main-content {
+    margin-left: 0;
+    margin-right: 220px;
   }
 
   .navmenu ul {
