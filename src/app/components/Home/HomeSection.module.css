@@ -1,4 +1,4 @@
-.hero {
+.home {
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-.heroImage {
+.homeImage {
   position: absolute;
   inset: 0;
   display: block;
@@ -19,7 +19,7 @@
   z-index: 1;
 }
 
-.hero::before {
+.home::before {
   content: "";
   background: color-mix(in srgb, var(--background-color), transparent 30%);
   position: absolute;
@@ -27,12 +27,12 @@
   z-index: 2;
 }
 
-.heroContainer {
+.homeContainer {
   position: relative;
   z-index: 3;
 }
 
-.heroTitle {
+.homeTitle {
   margin: 0px;
   font-size: 64px;
   font-weight: 700;
@@ -40,7 +40,7 @@
   font-family: var(--heading-font);
 }
 
-.heroSubtitle {
+.homeSubtitle {
   margin: 5px 0 0 0;
   font-size: 26px;
   color: var(--default-color);
@@ -58,7 +58,7 @@
   flex-wrap: wrap;
 }
 
-.heroButton {
+.homeButton {
   display: inline-block;
   padding: 12px 30px;
   background-color: var(--accent-color);
@@ -72,18 +72,18 @@
   cursor: pointer;
 }
 
-.heroButton:hover {
+.homeButton:hover {
   background-color: transparent;
   color: var(--accent-color);
   transform: translateY(-3px);
 }
 
-.heroButtonOutline {
+.homeButtonOutline {
   background-color: transparent;
   color: var(--accent-color);
 }
 
-.heroButtonOutline:hover {
+.homeButtonOutline:hover {
   background-color: var(--accent-color);
   color: white;
 }
@@ -110,10 +110,10 @@
 
 /* Tablettes paysage (entre 769px et 1024px) */
 @media (max-width: 1024px) and (min-width: 769px) {
-  .heroTitle {
+  .homeTitle {
     font-size: 48px;
   }
-  .heroSubtitle {
+  .homeSubtitle {
     font-size: 22px;
   }
   .socialLinks a {
@@ -124,10 +124,10 @@
 
 /* Tablettes portrait et grands mobiles (entre 481px et 768px) */
 @media (max-width: 768px) and (min-width: 481px) {
-  .heroTitle {
+  .homeTitle {
     font-size: 32px;
   }
-  .heroSubtitle {
+  .homeSubtitle {
     font-size: 20px;
   }
   .socialLinks a {
@@ -137,7 +137,7 @@
   .buttonGroup {
     justify-content: center;
   }
-  .heroButton {
+  .homeButton {
     padding: 10px 20px;
     font-size: 14px;
   }
@@ -145,17 +145,17 @@
 
 /* Petits mobiles (moins de 480px) */
 @media (max-width: 480px) {
-  .heroTitle {
+  .homeTitle {
     font-size: 24px;
   }
-  .heroSubtitle {
+  .homeSubtitle {
     font-size: 16px;
   }
   .socialLinks a {
     font-size: 14px;
     margin-right: 10px;
   }
-  .hero {
+  .home {
     padding: 5px 10px;
   }
   .buttonGroup {
@@ -163,7 +163,7 @@
     align-items: center;
     gap: 10px;
   }
-  .heroButton {
+  .homeButton {
     width: 100%;
     text-align: center;
     padding: 8px 15px;

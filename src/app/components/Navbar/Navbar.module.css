@@ -1,7 +1,7 @@
 .header {
   color: var(--default-color);
   position: fixed;
-  top: 0;
+  top: 50px; /* Espace pour le toggle button au-dessus */
   left: 0;
   bottom: 0;
   padding: 0 15px;
@@ -9,12 +9,58 @@
   overflow-y: auto;
   z-index: 997;
   min-width: 200px;
-  margin-top: 100px;
 }
 
 .rtl {
   left: auto;
   right: 0;
+}
+
+.headerToggle {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  top: 15px; /* Positionné tout en haut */
+  right: 15px;
+  z-index: 9999; /* Au-dessus de tout */
+  transition: background-color 0.3s;
+}
+
+.headerToggle a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.headerToggle:hover {
+  color: var(--contrast-color);
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Pour le mode RTL */
+:global(.rtl-mode) .headerToggle {
+  right: auto;
+  left: 15px;
+}
+
+.rtl .headerToggle {
+  right: auto;
+  left: 15px;
 }
 
 @media (max-width: 1199px) {
@@ -23,6 +69,7 @@
     border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     width: 300px;
     left: -100%;
+    top: 50px; /* Maintenir l'espace pour le toggle */
   }
 
   .rtl {
@@ -31,27 +78,57 @@
     border-right: none;
     border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   }
+
+  .headerHidden {
+    left: -100% !important;
+  }
+
+  .rtl.headerHidden {
+    right: -100% !important;
+  }
 }
 
 @media (min-width: 1200px) and (max-width: 1600px) {
-  .header ~ .main-content {
-    margin-left: 160px;
+  .header {
+    top: 50px; /* Espace pour le toggle */
   }
 
-  .header ~ .main-content .hero {
+  .header ~ .main-content {
+    margin-left: 160px;
+    transition: margin 0.4s ease;
+  }
+
+  .headerHidden ~ .main-content {
+    margin-left: 0 !important;
+  }
+
+  .header ~ .main-content .home {
     margin-left: -160px;
     width: 100vw;
+  }
+
+  .headerHidden ~ .main-content .home {
+    margin-left: 0 !important;
   }
 
   .rtl ~ .main-content {
     margin-left: 0;
     margin-right: 160px;
+    transition: margin 0.4s ease;
   }
 
-  .rtl ~ .main-content .hero {
+  .rtl.headerHidden ~ .main-content {
+    margin-right: 0 !important;
+  }
+
+  .rtl ~ .main-content .home {
     margin-left: 0;
     margin-right: -160px;
     width: 100vw;
+  }
+
+  .rtl.headerHidden ~ .main-content .home {
+    margin-right: 0 !important;
   }
 }
 
@@ -64,44 +141,24 @@
   right: 0;
 }
 
-.headerToggle {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 9999;
-  transition: background-color 0.3s;
+.headerHidden {
+  left: -100%;
 }
 
-:global(.rtl-mode) .headerToggle {
-  right: auto;
-  left: 15px;
-}
-
-.headerToggle:hover {
-  color: var(--contrast-color);
-  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+.rtl.headerHidden {
+  right: -100%;
 }
 
 .navmenu {
   padding: 0;
-  z-index: 9997;
+  z-index: 997;
 }
 
 .navmenu ul {
   list-style: none;
   padding: 0 0 20px 0;
   margin: 0;
-  width: 140px;
+  width: 120px;
 }
 
 .navLink {
@@ -154,28 +211,44 @@
   display: block;
 }
 
-/* Mobile: moins de 576px */
 @media (max-width: 575.98px) {
   .header {
     width: 100%;
     height: auto;
     position: fixed;
-    top: 0;
+    top: 50px; /* Espace pour le toggle button */
     left: 0;
     bottom: auto;
     padding: 10px;
-    margin-top: 0;
     overflow-y: visible;
     z-index: 9999;
   }
 
-  .rtl {
-    left: auto;
-    right: 0;
+  .headerToggle {
+    top: 5px;
+    right: 15px;
+  }
+
+  .headerHidden {
+    top: -100% !important;
+    left: 0 !important;
+  }
+
+  .rtl .headerHidden {
+    top: -100% !important;
+    right: 0 !important;
+    left: auto !important;
   }
 
   .header ~ .main-content {
     margin-left: 0;
+    margin-top: 100px; /* Espace pour header + toggle */
+    transition: margin 0.4s ease;
+  }
+
+  .headerHidden ~ .main-content {
+    margin-top: 50px !important; /* Seulement l'espace du toggle */
+    padding-top: 20px;
   }
 
   .rtl ~ .main-content {
@@ -199,24 +272,23 @@
     padding-left: 10px;
   }
 
-  .headerToggle {
-    top: 10px;
-    right: 10px;
-  }
-
-  :global(.rtl-mode) .headerToggle {
+  .rtl .headerToggle {
     right: auto;
-    left: 10px;
+    left: 15px;
   }
 }
 
-/* Tablette: entre 576px et 991px */
 @media (min-width: 576px) and (max-width: 991.98px) {
   .header {
     width: 250px;
-    margin-top: 0;
+    top: 50px; /* Espace pour le toggle */
     bottom: 0;
     position: fixed;
+  }
+
+  .headerToggle {
+    top: 5px;
+    right: 15px;
   }
 
   .rtl {
@@ -224,13 +296,28 @@
     right: 0;
   }
 
+  .rtl .headerToggle {
+    right: auto;
+    left: 15px;
+  }
+
   .header ~ .main-content {
     margin-left: 250px;
+    transition: margin 0.4s ease;
+  }
+
+  .headerHidden ~ .main-content {
+    margin-left: 0 !important;
   }
 
   .rtl ~ .main-content {
     margin-left: 0;
     margin-right: 250px;
+    transition: margin 0.4s ease;
+  }
+
+  .rtl.headerHidden ~ .main-content {
+    margin-right: 0 !important;
   }
 
   .navmenu ul {
@@ -256,11 +343,16 @@
   }
 }
 
-/* Écran large: plus de 1600px */
 @media (min-width: 1601px) {
   .header {
     min-width: 220px;
     width: 220px;
+    top: 50px; /* Espace pour le toggle */
+  }
+
+  .headerToggle {
+    top: 5px;
+    right: 15px;
   }
 
   .rtl {
@@ -268,13 +360,28 @@
     right: 0;
   }
 
+  .rtl .headerToggle {
+    right: auto;
+    left: 15px;
+  }
+
   .header ~ .main-content {
     margin-left: 220px;
+    transition: margin 0.4s ease;
+  }
+
+  .headerHidden ~ .main-content {
+    margin-left: 0 !important;
   }
 
   .rtl ~ .main-content {
     margin-left: 0;
     margin-right: 220px;
+    transition: margin 0.4s ease;
+  }
+
+  .rtl.headerHidden ~ .main-content {
+    margin-right: 0 !important;
   }
 
   .navmenu ul {

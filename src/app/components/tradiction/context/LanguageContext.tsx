@@ -21,17 +21,17 @@ const translations = {
     'nav.portfolio': 'Portfolio',
     'nav.services': 'Services',
     'nav.contact': 'Contact',
-    
-    // Hero Section
-    'hero.name': 'Mohammed Ezzaim',
-    'hero.subtitle': 'Je suis',
-    'hero.roles.java': 'Développeur Java',
-    'hero.roles.spring': 'Développeur Spring',
-    'hero.roles.angular': 'Développeur Angular',
-    'hero.roles.ai': 'Ingénieur IA',
-    'hero.roles.laravel': 'Programmeur Laravel',
-    'hero.downloadCV': 'Télécharger mon CV',
-    
+
+    // home Section
+    'home.name': 'Mohammed Ezzaim',
+    'home.subtitle': 'Je suis',
+    'home.roles.java': 'Développeur Java',
+    'home.roles.spring': 'Développeur Spring',
+    'home.roles.angular': 'Développeur Angular',
+    'home.roles.ai': 'Ingénieur IA',
+    'home.roles.laravel': 'Programmeur Laravel',
+    'home.downloadCV': 'Télécharger mon CV',
+
     // About Section
     'about.title': 'À propos',
     'about.subtitle': 'Développeur Full Stack & Ingénieur IA',
@@ -60,7 +60,8 @@ const translations = {
     'about.languages.english': 'Anglais',
     'about.languages.french': 'Français',
     'about.languages.arabic': 'Arabe',
-    'about.languages.level.b1': 'Niveau B1',
+    'about.languages.fr.level.b2': 'Niveau B2',
+    'about.languages.en.level.b2': 'Niveau B1',
     'about.languages.level.native': 'Langue maternelle',
     'about.education.title': 'Formation',
     'about.education.master': 'Master en Intelligence Artificielle et Ingénierie Informatique (IA2I)',
@@ -72,7 +73,26 @@ const translations = {
     'about.projects.booking': 'Plateforme de réservation d\'appartements et voitures',
     'about.projects.advertising': 'Application de calcul des coûts publicitaires urbains',
     'about.projects.website': 'Générateur Laravel de sites web personnalisés',
-    
+    'about.stats.years': 'Années d\'expérience',
+    'about.stats.projects': 'Projets réalisés',
+    'about.stats.coffee': 'Tasses de café',
+    'about.technologies.title': 'Technologies Clés',
+    'about.professional.title': 'Profil Professionnel',
+    'about.professional.summary1': 'Développeur Full Stack spécialisé dans la création de solutions logicielles robustes et évolutives. Expérience dans le développement d\'applications web complexes avec Java/Spring et Angular.',
+    'about.professional.summary2': 'Passionné par l\'intégration des technologies IA dans les applications métiers. Actuellement en Master IA à la FSTG de Marrakech, je combine expertise technique et recherche avancée.',
+    'about.contact.button': 'Contactez-moi',
+    'about.social.hint': 'Retrouvez-moi aussi sur',
+    'about.passions.title': 'Passions & Intérêts',
+    'about.passions.innovation': 'Innovation Technologique',
+    'about.passions.innovation.desc': 'Passionné par les nouvelles technologies et l\'innovation',
+    'about.passions.collaboration': 'Travail d\'équipe',
+    'about.passions.collaboration.desc': 'J\'aime collaborer et partager mes connaissances',
+    'about.passions.learning': 'Apprentissage Continu',
+    'about.passions.learning.desc': 'Toujours en quête de nouveaux défis et apprentissages',
+    'about.passions.opensource': 'Open Source',
+    'about.passions.opensource.desc': 'Contributeur actif à la communauté open source',
+
+
     // General
     'common.loading': 'Chargement...',
     'common.error': 'Erreur',
@@ -80,7 +100,7 @@ const translations = {
     'common.available': 'Disponible',
     'common.inprogress': 'En cours'
   },
-  
+
   en: {
     // Navigation
     'nav.home': 'Home',
@@ -89,17 +109,17 @@ const translations = {
     'nav.portfolio': 'Portfolio',
     'nav.services': 'Services',
     'nav.contact': 'Contact',
-    
-    // Hero Section
-    'hero.name': 'Mohammed Ezzaim',
-    'hero.subtitle': 'I\'m a',
-    'hero.roles.java': 'Java Developer',
-    'hero.roles.spring': 'Spring Developer',
-    'hero.roles.angular': 'Angular Developer',
-    'hero.roles.ai': 'AI Engineer',
-    'hero.roles.laravel': 'Laravel Developer',
-    'hero.downloadCV': 'Download my CV',
-    
+
+    // home Section
+    'home.name': 'Mohammed Ezzaim',
+    'home.subtitle': 'I\'m a',
+    'home.roles.java': 'Java Developer',
+    'home.roles.spring': 'Spring Developer',
+    'home.roles.angular': 'Angular Developer',
+    'home.roles.ai': 'AI Engineer',
+    'home.roles.laravel': 'Laravel Developer',
+    'home.downloadCV': 'Download my CV',
+
     // About Section
     'about.title': 'About',
     'about.subtitle': 'Full Stack Developer & AI Engineer',
@@ -128,7 +148,8 @@ const translations = {
     'about.languages.english': 'English',
     'about.languages.french': 'French',
     'about.languages.arabic': 'Arabic',
-    'about.languages.level.b1': 'B1 Level',
+    'about.languages.fr.level.b2': 'B2 Level',
+    'about.languages.en.level.b2': 'B1 Level',
     'about.languages.level.native': 'Native',
     'about.education.title': 'Education',
     'about.education.master': 'Master\'s in Artificial Intelligence and Computer Engineering (IA2I)',
@@ -140,7 +161,27 @@ const translations = {
     'about.projects.booking': 'Apartment and car booking platform',
     'about.projects.advertising': 'Urban advertising cost calculation application',
     'about.projects.website': 'Laravel custom website builder',
-    
+    'about.professional.title': 'Professional Profile',
+    'about.professional.summary1': 'Full Stack Developer specializing in creating robust and scalable software solutions. Experience developing complex web applications with Java/Spring and Angular.',
+    'about.professional.summary2': 'Passionate about integrating AI technologies into business applications. Currently pursuing a Master\'s degree in AI at the FSTG in Marrakech, I combine technical expertise and advanced research.',
+    'about.technologies.title': 'Key Technologies',
+
+    'about.stats.years': 'Years of Experience',
+    'about.stats.projects': 'Projects Completed',
+    'about.stats.coffee': 'Cups of Coffee',
+    'about.stats.title': 'Statistics',
+    'about.stats.description': 'A brief overview of my professional journey and achievements.',
+    'about.contact.button': 'Contact Me',
+    'about.social.hint': 'Also find me on',
+    'about.passions.title': 'Passions & Interests',
+    'about.passions.innovation': 'Technological Innovation',
+    'about.passions.innovation.desc': 'Passionate about new technologies and innovation',
+    'about.passions.collaboration': 'Teamwork',
+    'about.passions.collaboration.desc': 'I enjoy collaborating and sharing knowledge',
+    'about.passions.learning': 'Continuous Learning',
+    'about.passions.learning.desc': 'Always seeking new challenges and learning opportunities',
+    'about.passions.opensource': 'Open Source',
+    'about.passions.opensource.desc': 'Active contributor to the open source community',
     // General
     'common.loading': 'Loading...',
     'common.error': 'Error',
@@ -148,7 +189,7 @@ const translations = {
     'common.available': 'Available',
     'common.inprogress': 'In Progress'
   },
-  
+
   ar: {
     // Navigation
     'nav.home': 'الرئيسية',
@@ -157,17 +198,17 @@ const translations = {
     'nav.portfolio': 'أعمالي',
     'nav.services': 'الخدمات',
     'nav.contact': 'اتصل بي',
-    
-    // Hero Section
-    'hero.name': 'محمد عزايم',
-    'hero.subtitle': 'أنا',
-    'hero.roles.java': 'مطور جافا',
-    'hero.roles.spring': 'مطور سبرينغ',
-    'hero.roles.angular': 'مطور أنجولار',
-    'hero.roles.ai': 'مهندس ذكاء اصطناعي',
-    'hero.roles.laravel': 'مطور لارافيل',
-    'hero.downloadCV': 'تنزيل سيرتي الذاتية',
-    
+
+    // home Section
+    'home.name': 'محمد الزعيم',
+    'home.subtitle': 'أنا',
+    'home.roles.java': 'مطور جافا',
+    'home.roles.spring': 'مطور سبرينغ',
+    'home.roles.angular': 'مطور أنجولار',
+    'home.roles.ai': 'مهندس ذكاء اصطناعي',
+    'home.roles.laravel': 'مطور لارافيل',
+    'home.downloadCV': 'تنزيل سيرتي الذاتية',
+
     // About Section
     'about.title': 'نبذة عني',
     'about.subtitle': 'مطور فول ستاك ومهندس ذكاء اصطناعي',
@@ -196,7 +237,8 @@ const translations = {
     'about.languages.english': 'الإنجليزية',
     'about.languages.french': 'الفرنسية',
     'about.languages.arabic': 'العربية',
-    'about.languages.level.b1': 'مستوى B1',
+    'about.languages.fr.level.b2': 'المستوى B2',
+    'about.languages.en.level.b2': 'المستوى B1',
     'about.languages.level.native': 'اللغة الأم',
     'about.education.title': 'التعليم',
     'about.education.master': 'ماجستير في الذكاء الاصطناعي وهندسة الحاسوب (IA2I)',
@@ -208,7 +250,28 @@ const translations = {
     'about.projects.booking': 'منصة حجز الشقق والسيارات',
     'about.projects.advertising': 'تطبيق حساب تكاليف الإعلانات الحضرية',
     'about.projects.website': 'منشئ مواقع ويب مخصصة بـ Laravel',
-    
+    // في كل لغة (فرنسية، إنجليزية، عربية)، أضف:
+
+    'about.professional.title': "الملف الشخصي للمهنة",
+
+    'about.professional.summary1': "مطور برامج متكامل، متخصص في إنشاء حلول برمجية قوية وقابلة للتطوير. لدي خبرة في تطوير تطبيقات ويب معقدة باستخدام Java/Spring و Angular",
+    'about.professional.summary2': "شغوف بدمج تقنيات الذكاء الاصطناعي في تطبيقات الأعمال. أدرس حاليًا للحصول على درجة الماجستير في الذكاء الاصطناعي من معهد FSTG في مراكش، حيث أجمع بين الخبرة التقنية والبحث المتقدم",
+    'about.technologies.title': "التقنيات الرئيسية",
+    'about.stats.years': 'سنوات من الخبرة',
+    'about.stats.projects': 'المشاريع المنجزة',
+    'about.stats.coffee': 'أكواب القهوة',
+    'about.stats.title': 'الإحصائيات',
+    'about.stats.description': 'نظرة عامة موجزة عن مسيرتي المهنية وإنجازاتي',
+    'about.passions.title': 'الاهتمامات والهوايات',
+    'about.passions.innovation': 'الابتكار التكنولوجي',
+    'about.passions.innovation.desc': 'شغوف بالتكنولوجيات الجديدة والابتكار',
+    'about.passions.collaboration': 'العمل الجماعي',
+    'about.passions.collaboration.desc': 'أستمتع بالتعاون وتبادل المعرفة',
+    'about.passions.learning': 'التعلم المستمر',
+    'about.passions.learning.desc': 'دائمًا أبحث عن تحديات جديدة وفرص للتعلم',
+    'about.passions.opensource': 'المصادر المفتوحة',
+    'about.passions.opensource.desc': 'مساهم نشط في مجتمع المصادر المفتوحة',
+
     // General
     'common.loading': 'جاري التحميل...',
     'common.error': 'خطأ',
@@ -232,7 +295,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       const savedLanguage = localStorage.getItem('language') as Language;
       if (savedLanguage && ['fr', 'en', 'ar'].includes(savedLanguage)) {
         setLanguageState(savedLanguage);
-        
+
         // Apply RTL for Arabic
         if (savedLanguage === 'ar') {
           document.documentElement.setAttribute('dir', 'rtl');
@@ -247,11 +310,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    
+
     // Only use localStorage if we're in the browser
     if (typeof window !== 'undefined') {
       localStorage.setItem('language', lang);
-      
+
       // Handle RTL for Arabic
       if (lang === 'ar') {
         document.documentElement.setAttribute('dir', 'rtl');

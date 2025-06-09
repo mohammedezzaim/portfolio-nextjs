@@ -13,11 +13,11 @@ const HomeSection = () => {
   useEffect(() => {
     if (typedRef.current) {
       const roles = [
-        t('hero.roles.java'),
-        t('hero.roles.spring'),
-        t('hero.roles.angular'),
-        t('hero.roles.ai'),
-        t('hero.roles.laravel')
+        t('home.roles.java'),
+        t('home.roles.spring'),
+        t('home.roles.angular'),
+        t('home.roles.ai'),
+        t('home.roles.laravel')
       ];
 
       const typed = new Typed(typedRef.current, {
@@ -51,29 +51,29 @@ const HomeSection = () => {
   };
 
   return (
-    <section id="hero" className={styles.hero}>
+    <section id="home" className={styles.home}>
       <img
-        src="/images/hero-bg.jpg"
+        src="/images/home-bg.jpg"
         alt="Background"
-        className={styles.heroImage}
+        className={styles.homeImage}
       />
 
-      <div className={`container ${styles.heroContainer}`}>
+      <div className={`container ${styles.homeContainer}`}>
         <div className="row justify-content-center">
           <div className="col-lg-9">
-            <h2 className={styles.heroTitle}>{t('hero.name')}</h2>
-            <p className={styles.heroSubtitle}>
-              {t('hero.subtitle')} <span ref={typedRef} className={styles.typed}></span>
+            <h2 className={styles.homeTitle}>{t('home.name')}</h2>
+            <p className={styles.homeSubtitle}>
+              {t('home.subtitle')} <span ref={typedRef} className={styles.typed}></span>
             </p>
             <div className={styles.buttonGroup}>
-              <a href="#contact" className={styles.heroButton}>
+              <a href="#contact" className={styles.homeButton}>
                 {t('nav.contact')}
               </a>
               <button 
                 onClick={handleDownloadCV} 
-                className={`${styles.heroButton} ${styles.heroButtonOutline}`}
+                className={`${styles.homeButton} ${styles.homeButtonOutline}`}
               >
-                {t('hero.downloadCV')}
+                {t('home.downloadCV')}
               </button>
             </div>
             <div className={styles.socialLinks}>

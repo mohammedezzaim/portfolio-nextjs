@@ -8,7 +8,8 @@ import { useRouter, usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const { t, language } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();
@@ -27,7 +28,6 @@ const Navbar = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
-            // Mettre à jour l'URL sans recharger la page
             window.history.pushState(null, '', `${pathname}#${entry.target.id}`);
           }
         });
@@ -39,7 +39,6 @@ const Navbar = () => {
       observer.observe(section);
     });
 
-    // Vérifier le hash au chargement initial
     if (window.location.hash) {
       const sectionId = window.location.hash.substring(1);
       const section = document.getElementById(sectionId);
@@ -58,8 +57,8 @@ const Navbar = () => {
     };
   }, [pathname]);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleNavbarVisibility = () => {
+    setIsNavbarHidden(!isNavbarHidden);
   };
 
   const handleNavClick = (sectionId: string) => {
@@ -68,10 +67,7 @@ const Navbar = () => {
       if (window.innerWidth < 1200) {
         setIsMenuOpen(false);
       }
-      
-      // Mettre à jour l'URL avant de faire défiler
       router.push(`${pathname}#${sectionId}`);
-      
       section.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
@@ -80,7 +76,7 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { id: 'hero', icon: 'bi-house', labelKey: 'nav.home' },
+    { id: 'home', icon: 'bi-house', labelKey: 'nav.home' },
     { id: 'about', icon: 'bi-person', labelKey: 'nav.about' },
     { id: 'resume', icon: 'bi-file-earmark-text', labelKey: 'nav.resume' },
     { id: 'portfolio', icon: 'bi-images', labelKey: 'nav.portfolio' },
@@ -89,39 +85,48 @@ const Navbar = () => {
   ];
 
   return (
-    <header
-      className={`${styles.header} ${isMenuOpen ? styles.headerShow : ''} ${
-        language === 'ar' ? styles.rtl : ''
-      }`}
-    >
+    <>
+      {/* Bouton toggle repositionné au-dessus de la navbar */}
       <div
         className={styles.headerToggle}
-        onClick={toggleMenu}
         aria-label={t('common.toggleNav')}
       >
-        <i className="bi bi-list"></i>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            toggleNavbarVisibility();
+          }}
+        >
+          <i className="bi bi-list"></i>
+        </a>
       </div>
 
-      <nav className={styles.navmenu}>
-        <ul>
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <a
-                href={`#${item.id}`}
-                className={`${styles.navLink} ${activeSection === item.id ? styles.active : ''}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.id);
-                }}
-              >
-                <i className={`bi ${item.icon}`}></i>
-                <span>{t(item.labelKey)}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+      <header
+        className={`${styles.header} ${isMenuOpen ? styles.headerShow : ''} ${isNavbarHidden ? styles.headerHidden : ''
+          } ${language === 'ar' ? styles.rtl : ''}`}
+      >
+        <nav className={styles.navmenu}>
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className={`${styles.navLink} ${activeSection === item.id ? styles.active : ''}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.id);
+                  }}
+                >
+                  <i className={`bi ${item.icon}`}></i>
+                  <span>{t(item.labelKey)}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+    </>
   );
 };
 
