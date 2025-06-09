@@ -3,6 +3,7 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
+
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway",  sans-serif;
@@ -259,4 +260,32 @@ section,
   right: 0;
   bottom: 0;
   margin: auto;
+}
+
+
+
+/* chatbot */
+.chatbot-message-user {
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+}
+
+.chatbot-message-bot {
+  background-color: white;
+  color: #1f2937;
+  border-radius: 18px 18px 18px 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 640px) {
+  .chatbot-container {
+    width: 95vw;
+    right: 2.5vw;
+    bottom: 80px;
+  }
+  
+  .chatbot-input {
+    padding: 12px;
+  }
 }

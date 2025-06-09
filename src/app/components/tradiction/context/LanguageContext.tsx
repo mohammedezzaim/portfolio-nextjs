@@ -93,6 +93,19 @@ const translations = {
     'about.passions.opensource.desc': 'Contributeur actif à la communauté open source',
 
 
+    // Chatbot Section
+    'chatbot.welcome': 'Bonjour ! Comment puis-je vous aider ?',
+    'chatbot.header': 'Assistant de Mohammed',
+    'chatbot.placeholder': 'Tapez votre message...',
+    'chatbot.typing': 'En train de taper...',
+    'chatbot.responses.salutations1': 'Bonjour ! Ravi de vous parler. Comment puis-je vous aider ?',
+    'chatbot.responses.salutations2': 'Salut ! Que souhaitez-vous savoir sur Mohammed ?',
+    'chatbot.responses.salutations3': 'Hello ! Je suis là pour répondre à vos questions.',
+    'chatbot.responses.default1': 'C’est une excellente question !',
+    'chatbot.responses.default2': 'Je ne suis pas sûr de bien comprendre.',
+    'chatbot.responses.default3': 'Mohammed serait ravi de discuter de cela avec vous.',
+
+
     // General
     'common.loading': 'Chargement...',
     'common.error': 'Erreur',
@@ -182,6 +195,20 @@ const translations = {
     'about.passions.learning.desc': 'Always seeking new challenges and learning opportunities',
     'about.passions.opensource': 'Open Source',
     'about.passions.opensource.desc': 'Active contributor to the open source community',
+
+    // Chatbot Section
+    'chatbot.welcome': 'Hello! How can I assist you?',
+    'chatbot.header': 'Mohammed’s Assistant',
+    'chatbot.placeholder': 'Type your message...',
+    'chatbot.typing': 'Typing...',
+    'chatbot.responses.salutations1': 'Hello! Nice to talk to you. How can I help you?',
+    'chatbot.responses.salutations2': 'Hi! What would you like to know about Mohammed?',
+    'chatbot.responses.salutations3': 'Hey! I’m here to answer your questions.',
+    'chatbot.responses.default1': 'That’s a great question!',
+    'chatbot.responses.default2': 'I’m not sure I understand.',
+    'chatbot.responses.default3': 'Mohammed would be happy to discuss this with you.',
+
+
     // General
     'common.loading': 'Loading...',
     'common.error': 'Error',
@@ -271,6 +298,19 @@ const translations = {
     'about.passions.learning.desc': 'دائمًا أبحث عن تحديات جديدة وفرص للتعلم',
     'about.passions.opensource': 'المصادر المفتوحة',
     'about.passions.opensource.desc': 'مساهم نشط في مجتمع المصادر المفتوحة',
+
+
+    // Chatbot Section
+    'chatbot.welcome': 'مرحباً! كيف يمكنني مساعدتك؟',
+    'chatbot.header': 'مساعد محمد',
+    'chatbot.placeholder': 'اكتب رسالتك...',
+    'chatbot.typing': 'جارٍ الكتابة...',
+    'chatbot.responses.salutations1': 'مرحباً! يسعدني التحدث معك. كيف يمكنني مساعدتك؟',
+    'chatbot.responses.salutations2': 'مرحباً! ماذا تريد معرفته عن محمد؟',
+    'chatbot.responses.salutations3': 'مرحباً! أنا هنا للإجابة على أسئلتك.',
+    'chatbot.responses.default1': 'هذا سؤال رائع!',
+    'chatbot.responses.default2': 'لست متأكداً من فهمي للسؤال.',
+    'chatbot.responses.default3': 'سيكون محمد سعيداً لمناقشة هذا معك.',
 
     // General
     'common.loading': 'جاري التحميل...',
